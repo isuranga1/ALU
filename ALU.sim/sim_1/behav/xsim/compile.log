@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/sources_1/new/Subtractor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Subtractor
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/sim_1/new/Subtractor_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Subtractor_tb
