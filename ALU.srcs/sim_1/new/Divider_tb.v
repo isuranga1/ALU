@@ -52,17 +52,21 @@ module Divider_tb;
         #10; // Wait for 10 time units
         $display("%b\t%b\t%b\t%b\t%b", A_div, B_div, C_div,32'h40000000, C_div == 32'h40000000); // Expected 2.0
       
-       A_div = 32'h40000000; // 200
+       A_div = 32'h40000000; // 2
         B_div = 32'h42340000; // 45 
         #10; // Wait for 10 time units
-        $display("%b\t%b\t%b\t%b\t%b", A_div, B_div, C_div,32'h408e3886, C_div == 32'h408e3886); // Expected 4.444
+        $display("%b\t%b\t%b\t%b\t%b", A_div, B_div, C_div,32'h3d360b60, C_div == 32'h3d360b60); // Expected 0.04444
 
-   A_div = 32'h43480000; // 2.0
+   A_div = 32'h43480000; // 200
         B_div = 32'h3c23d70a; // 0.01 
         #10; // Wait for 10 time units
-        $display("%b\t%b\t%b\t%b\t%b", A_div, B_div, C_div,32'h43480000, C_div == 32'h43480000); // Expected 200
+        $display("%b\t%b\t%b\t%b\t%b", A_div, B_div, C_div,32'h469c4000, C_div == 32'h469c4000); // Expected 20000
 
- 
+  A_div = 32'h3bc49ba6; // 0.006
+        B_div = 32'h42200000; // 40
+        #10; // Wait for 10 time units
+        $display("%b\t%b\t%b\t%b\t%b", A_div, B_div, C_div,32'h391d4952, C_div == 32'h391d4952); // Expected 0.00015
+
        
         
         

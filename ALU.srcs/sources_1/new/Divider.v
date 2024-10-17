@@ -46,64 +46,143 @@ module Divider(
         
         C_div = 32'b0; // Initialize output
         
-        div_EXPO_Sum = A_div_EXPO - B_div_EXPO + 8'b01111111 ;
+        div_EXPO_Sum = A_div_EXPO - B_div_EXPO  + 8'b01111111 ;
         
         if (div_EXPO_Sum[8] == 1'b1) begin
              div_EXPO_Sum = div_EXPO_Sum >> 1;
         end
      
         // diviply mantissas
-        mantissa_C_div = ((mantissa_A_div) / mantissa_B_div );
+        mantissa_C_div = ((mantissa_A_div<< 23) / mantissa_B_div );
  // Normalizing the result (if needed)
-        if (mantissa_C_div[47] == 0) begin
-                mantissa_C_div = mantissa_C_div << 1;
-                div_EXPO_Sum = div_EXPO_Sum - 1; 
-        end
-        if (mantissa_C_div[47] == 0) begin
-                mantissa_C_div = mantissa_C_div << 1;
-                div_EXPO_Sum = div_EXPO_Sum - 1;
-        end
-        if (mantissa_C_div[47] == 0) begin
-                mantissa_C_div = mantissa_C_div << 1;
-                div_EXPO_Sum = div_EXPO_Sum - 1;
-        end
-        if (mantissa_C_div[47] == 0) begin
-                mantissa_C_div = mantissa_C_div << 1;
-                div_EXPO_Sum = div_EXPO_Sum - 1;
-        end
-        if (mantissa_C_div[47] == 0) begin
-                mantissa_C_div = mantissa_C_div << 1;
-                div_EXPO_Sum = div_EXPO_Sum - 1;
-        end
-        if (mantissa_C_div[47] == 0) begin
-                mantissa_C_div = mantissa_C_div << 1;
-                div_EXPO_Sum = div_EXPO_Sum - 1;
-        end
-        if (mantissa_C_div[47] == 0) begin
-                mantissa_C_div = mantissa_C_div << 1;
-                div_EXPO_Sum = div_EXPO_Sum - 1;
-        end
-        if (mantissa_C_div[47] == 0) begin
-                mantissa_C_div = mantissa_C_div << 1;
-                div_EXPO_Sum = div_EXPO_Sum - 1;
-        end
-        if (mantissa_C_div[47] == 0) begin
-                mantissa_C_div = mantissa_C_div << 1;
-                div_EXPO_Sum = div_EXPO_Sum - 1;
-        end
-        if (mantissa_C_div[47] == 0) begin
-                mantissa_C_div = mantissa_C_div << 1;
-                div_EXPO_Sum = div_EXPO_Sum - 1;
-        end
-        if (mantissa_C_div[47] == 0) begin
-                mantissa_C_div = mantissa_C_div << 1;
-                div_EXPO_Sum = div_EXPO_Sum - 1;
-            
-        end
+         if (mantissa_C_div[23] == 1'b0) begin //24th
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization
+        end     
+            if (mantissa_C_div[23] == 1'b0) begin //23rd
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization
+        end      
+             if (mantissa_C_div[23] == 1'b0) begin //22nd
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization
+        end     
+            if (mantissa_C_div[23] == 1'b0) begin //21st
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization
+        end     
+             if (mantissa_C_div[23] == 1'b0) begin //20th
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization   
+       end           
+             if (mantissa_C_div[23] == 1'b0) begin //19th
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization        
+        end 
+             if (mantissa_C_div[23] == 1'b0) begin //18th
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization        
+        end 
+             if (mantissa_C_div[23] == 1'b0) begin //17th
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization        
+        end 
+ 
+             if (mantissa_C_div[23] == 1'b0) begin //16th
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization        
+        end 
+             if (mantissa_C_div[23] == 1'b0) begin //15th
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization        
+        end 
+             if (mantissa_C_div[23] == 1'b0) begin //14th
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization        
+        end 
+             if (mantissa_C_div[23] == 1'b0) begin //13th
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization        
+        end 
+             if (mantissa_C_div[23] == 1'b0) begin //12th
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization        
+      end   
+             if (mantissa_C_div[23] == 1'b0) begin //11th
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization        
+     end    
+             if (mantissa_C_div[23] == 1'b0) begin //10th
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization        
+       end  
+           if (mantissa_C_div[23] == 1'b0) begin //9th
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization        
+        end 
+             if (mantissa_C_div[23] == 1'b0) begin //8th
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization        
+        end 
+             if (mantissa_C_div[23] == 1'b0) begin //7th
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization        
+        end 
+             if (mantissa_C_div[23] == 1'b0) begin //6th
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization        
+        end 
+             if (mantissa_C_div[23] == 1'b0) begin //5th
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization        
+        end 
+             if (mantissa_C_div[23] == 1'b0) begin //4th
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization        
+        end 
+             if (mantissa_C_div[23] == 1'b0) begin //3th
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization        
+        end 
+             if (mantissa_C_div[23] == 1'b0) begin //2th
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization        
+        end 
+        
+             if (mantissa_C_div[23] == 1'b0) begin //1th
+            // Normalize if leading bit is not 1
+            mantissa_C_div = mantissa_C_div << 1;  // Shift left to normalize
+            div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization        
+        
+        end        
+  
         
         // Assemble the final output
         C_div[30:23] = div_EXPO_Sum[7:0];
-        C_div[22:0] = mantissa_C_div[46:24];
+        C_div[22:0] = mantissa_C_div[22:0];
         C_div[31] = A_div[31] ^ B_div[31]; 
          
         end  
