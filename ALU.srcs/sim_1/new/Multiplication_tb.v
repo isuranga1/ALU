@@ -42,8 +42,9 @@ module Multiplicator_tb ;
         B_mult = 32'b0;
 
         // Display header
-        $display("A\t\t\tB\t\t\tC\t\t\tExpected");
-        $display("---------------------------------------------------------");
+      $display("\t\t\tA\t\t\t\t\t\t\t\t\tB\t\t\t\t\t\t\t\t\t\t\C\t\t\t\t\t\t\t\Expected\t\t\t\t\t\Correct?");
+        $display("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+     
         
                 // Test cases
         // 1. 1.0 - 2.0

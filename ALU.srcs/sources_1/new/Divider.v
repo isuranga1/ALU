@@ -53,12 +53,54 @@ module Divider(
         end
      
         // diviply mantissas
-        mantissa_C_div = (mantissa_A_div<<23) / mantissa_B_div ;
+        mantissa_C_div = ((mantissa_A_div) / mantissa_B_div );
  // Normalizing the result (if needed)
-        if (mantissa_C_div[47] == 1) begin
-                mantissa_C_div = mantissa_C_div >> 1;
-                div_EXPO_Sum = div_EXPO_Sum + 1;
+        if (mantissa_C_div[47] == 0) begin
+                mantissa_C_div = mantissa_C_div << 1;
+                div_EXPO_Sum = div_EXPO_Sum - 1; 
         end
+        if (mantissa_C_div[47] == 0) begin
+                mantissa_C_div = mantissa_C_div << 1;
+                div_EXPO_Sum = div_EXPO_Sum - 1;
+        end
+        if (mantissa_C_div[47] == 0) begin
+                mantissa_C_div = mantissa_C_div << 1;
+                div_EXPO_Sum = div_EXPO_Sum - 1;
+        end
+        if (mantissa_C_div[47] == 0) begin
+                mantissa_C_div = mantissa_C_div << 1;
+                div_EXPO_Sum = div_EXPO_Sum - 1;
+        end
+        if (mantissa_C_div[47] == 0) begin
+                mantissa_C_div = mantissa_C_div << 1;
+                div_EXPO_Sum = div_EXPO_Sum - 1;
+        end
+        if (mantissa_C_div[47] == 0) begin
+                mantissa_C_div = mantissa_C_div << 1;
+                div_EXPO_Sum = div_EXPO_Sum - 1;
+        end
+        if (mantissa_C_div[47] == 0) begin
+                mantissa_C_div = mantissa_C_div << 1;
+                div_EXPO_Sum = div_EXPO_Sum - 1;
+        end
+        if (mantissa_C_div[47] == 0) begin
+                mantissa_C_div = mantissa_C_div << 1;
+                div_EXPO_Sum = div_EXPO_Sum - 1;
+        end
+        if (mantissa_C_div[47] == 0) begin
+                mantissa_C_div = mantissa_C_div << 1;
+                div_EXPO_Sum = div_EXPO_Sum - 1;
+        end
+        if (mantissa_C_div[47] == 0) begin
+                mantissa_C_div = mantissa_C_div << 1;
+                div_EXPO_Sum = div_EXPO_Sum - 1;
+        end
+        if (mantissa_C_div[47] == 0) begin
+                mantissa_C_div = mantissa_C_div << 1;
+                div_EXPO_Sum = div_EXPO_Sum - 1;
+            
+        end
+        
         // Assemble the final output
         C_div[30:23] = div_EXPO_Sum[7:0];
         C_div[22:0] = mantissa_C_div[46:24];

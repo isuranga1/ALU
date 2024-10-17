@@ -24,7 +24,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log Subtractor.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Subtractor.tcl" );
+         "-log Divider.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Divider.tcl" );
 
 
 
