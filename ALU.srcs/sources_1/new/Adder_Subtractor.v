@@ -35,9 +35,9 @@ module Adder_Subtractor(
 
     // Instantiate the Adder module (only activated when adding)
     Adder u1 (
-        .A(A_addsub_reg),    // Pass registered input A
-        .B(B_addsub_reg),    // Pass registered input B
-        .C(C_addout)         // Output goes to C_addout
+        .A_add(A_addsub_reg),    // Pass registered input A
+        .B_add(B_addsub_reg),    // Pass registered input B
+        .C_add(C_addout)         // Output goes to C_addout
     );
 
     // Instantiate the Subtractor module (only activated when subtracting)
@@ -48,80 +48,92 @@ module Adder_Subtractor(
     );
 
     always @(*) begin
-        // Ensure A_addsub[31] and B_addsub[31] are both 0 (positive numbers)
-        if (A_addsub[31] == 1'b0 && B_addsub[31] == 1'b0) begin
-            // Pass the inputs to the respective module based on the control signal
-            A_addsub_reg = A_addsub;
-            B_addsub_reg = B_addsub;
-
-            // If control signal is 0, perform addition (disable Subtractor)
-            if (ctrl == 1'b0) begin
-                C_addsub = C_addout;  // Result from the Adder
-            end
-            // If control signal is 1, perform subtraction (disable Adder)
-            else if (ctrl == 1'b1) begin
-                C_addsub = C_subout;  // Result from the Subtractor
-            end
-        end 
-        else if  (A_addsub[31] == 1'b0 && B_addsub[31] == 1'b1) begin // A=+ B=-
-            // Pass the inputs to the respective module based on the control signal
-            A_addsub_reg = A_addsub;
-            B_addsub_reg = B_addsub;
-
-            // If control signal is 0, perform subtraction (disable Adder)
-            if (ctrl == 1'b0) begin
-                B_addsub_reg[31] = 0'b0;
-                C_addsub = C_subout;  // Result from the Subtractor
-            end
-            // If control signal is 1, perform Addition (disable Subtractor)
-            else if (ctrl == 1'b1) begin
-                B_addsub_reg[31] = 0'b0;
-                C_addsub = C_addout;  // Result from the Adder
-            end
-        end 
-        else if  (A_addsub[31] == 1'b1 && B_addsub[31] == 1'b0) begin // A=+ B=-
-            // Pass the inputs to the respective module based on the control signal
-
-
-            // If control signal is 0, perform subtraction (disable Adder)
-            if (ctrl == 1'b0) begin
-                A_addsub_reg = B_addsub;
-                B_addsub_reg = A_addsub;
-                B_addsub_reg[31] = 0'b0;
-                C_addsub = C_subout;  // Result from the Subtractor
-            end
-            // If control signal is 1, perform Addition (disable Subtractor)
-            else if (ctrl == 1'b1) begin
+            // Check if either operand is infinity
+            if (A_addsub[30:23] == 8'hFF && A_addsub[22:0] == 0) begin // Operand A is infinity
+                if (B_addsub[30:23] == 8'hFF && B_addsub[22:0] == 0) begin // Operand B is also infinity
+                    if (A_addsub[31] == B_addsub[31]) begin
+                        C_addsub = A_addsub; // +Inf + +Inf or -Inf + -Inf -> same infinity
+                    end else begin
+                        C_addsub = 32'h7FC00000; // +Inf + -Inf -> NaN (undefined)
+                    end
+                end else begin
+                    C_addsub = 32'h7FC00000; // Infinity + finite -> infinity
+                end
+        
+            // Ensure A_addsub[31] and B_addsub[31] are both 0 (positive numbers)
+            end else if (A_addsub[31] == 1'b0 && B_addsub[31] == 1'b0) begin
+                // Pass the inputs to the respective module based on the control signal
                 A_addsub_reg = A_addsub;
                 B_addsub_reg = B_addsub;
-                C_addsub = C_addout;  // Result from the Adder
-            end
-        end
-        else if  (A_addsub[31] == 1'b1 && B_addsub[31] == 1'b1) begin // A=+ B=-
-            // Pass the inputs to the respective module based on the control signal
-
-
-            // If control signal is 0, perform subtraction (disable Adder)
-            if (ctrl == 1'b0) begin
+    
+                // If control signal is 0, perform addition (disable Subtractor)
+                if (ctrl == 1'b0) begin
+                    C_addsub = C_addout;  // Result from the Adder
+                end
+                // If control signal is 1, perform subtraction (disable Adder)
+                else if (ctrl == 1'b1) begin
+                    C_addsub = C_subout;  // Result from the Subtractor
+                end
+            end 
+            else if  (A_addsub[31] == 1'b0 && B_addsub[31] == 1'b1) begin // A=+ B=-
+                // Pass the inputs to the respective module based on the control signal
                 A_addsub_reg = A_addsub;
                 B_addsub_reg = B_addsub;
-                C_addsub = C_addout;  // Result from the Subtractor
+    
+                // If control signal is 0, perform subtraction (disable Adder)
+                if (ctrl == 1'b0) begin
+                    B_addsub_reg[31] = 0'b0;
+                    C_addsub = C_subout;  // Result from the Subtractor
+                end
+                // If control signal is 1, perform Addition (disable Subtractor)
+                else if (ctrl == 1'b1) begin
+                    B_addsub_reg[31] = 0'b0;
+                    C_addsub = C_addout;  // Result from the Adder
+                end
+            end 
+            else if  (A_addsub[31] == 1'b1 && B_addsub[31] == 1'b0) begin // A=+ B=-
+                // Pass the inputs to the respective module based on the control signal
+    
+    
+                // If control signal is 0, perform subtraction (disable Adder)
+                if (ctrl == 1'b0) begin
+                    A_addsub_reg = B_addsub;
+                    B_addsub_reg = A_addsub;
+                    B_addsub_reg[31] = 0'b0;
+                    C_addsub = C_subout;  // Result from the Subtractor
+                end
+                // If control signal is 1, perform Addition (disable Subtractor)
+                else if (ctrl == 1'b1) begin
+                    A_addsub_reg = A_addsub;
+                    B_addsub_reg = B_addsub;
+                    C_addsub = C_addout;  // Result from the Adder
+                end
             end
-            // If control signal is 1, perform Addition (disable Subtractor)
-            else if (ctrl == 1'b1) begin
-                A_addsub_reg = B_addsub;
-                B_addsub_reg = A_addsub;
-                A_addsub_reg[31] = 0'b0;
-                B_addsub_reg[31] = 0'b0;
-                C_addsub = C_subout;  // Result from the Adder
+            else if  (A_addsub[31] == 1'b1 && B_addsub[31] == 1'b1) begin // A=+ B=-
+                // Pass the inputs to the respective module based on the control signal
+    
+    
+                // If control signal is 0, perform subtraction (disable Adder)
+                if (ctrl == 1'b0) begin
+                    A_addsub_reg = A_addsub;
+                    B_addsub_reg = B_addsub;
+                    C_addsub = C_addout;  // Result from the Subtractor
+                end
+                // If control signal is 1, perform Addition (disable Subtractor)
+                else if (ctrl == 1'b1) begin
+                    A_addsub_reg = B_addsub;
+                    B_addsub_reg = A_addsub;
+                    A_addsub_reg[31] = 0'b0;
+                    B_addsub_reg[31] = 0'b0;
+                    C_addsub = C_subout;  // Result from the Adder
+                end
+            end         
+            else begin
+                // If condition is not met, don't pass inputs and assign 0 to output
+                A_addsub_reg = 32'd0;
+                B_addsub_reg = 32'd0;
+                C_addsub = 32'd0;
             end
-        end         
-        else begin
-            // If condition is not met, don't pass inputs and assign 0 to output
-            A_addsub_reg = 32'd0;
-            B_addsub_reg = 32'd0;
-            C_addsub = 32'd0;
-        end
     end
 
 endmodule

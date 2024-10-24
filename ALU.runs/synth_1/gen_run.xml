@@ -1,34 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1729196758" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Adder.dcp">
-  <File Type="PA-TCL" Name="Divider.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="Divider_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="Divider_reports.tcl"/>
-  <File Type="RDS-RDS" Name="Divider.vds"/>
-  <File Type="RDS-UTIL" Name="Divider_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="Divider_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="Divider.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="Divider_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="Divider_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1729792483" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Adder.dcp">
+  <File Type="PA-TCL" Name="ALU.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="ALU_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="ALU_reports.tcl"/>
+  <File Type="RDS-RDS" Name="ALU.vds"/>
+  <File Type="RDS-UTIL" Name="ALU_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="ALU_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="ALU.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="ALU_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="ALU_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/Divider.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/Adder.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/Subtractor.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -36,7 +20,13 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/Adder_Subtractor.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Divider.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -44,7 +34,20 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/Multiplication.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Subtractor.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ALU.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -52,7 +55,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="Divider"/>
+      <Option Name="TopModule" Val="ALU"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">

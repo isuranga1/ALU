@@ -51,7 +51,26 @@ module Divider(
         if (div_EXPO_Sum[8] == 1'b1) begin
              div_EXPO_Sum = div_EXPO_Sum >> 1;
         end
-     
+         // Handle special cases
+        if (A_div == 32'h7FC00000 || B_div == 32'h7FC00000) begin
+            // If either input is NaN, result is NaN
+            C_div = 32'h7FC00000; // Set result to NaN
+        end else if (B_div == 32'h00000000) begin
+            // Handle division by zero (set result to infinity)
+            C_div = {A_div[31] ^ B_div[31], 8'hFF, 23'h000000}; // Set result to +inf or -inf
+        end else if (A_div == 32'h00000000) begin
+            // If the numerator is zero, result is zero
+            C_div = 32'h00000000; // Set result to 0
+        end else if (A_div_EXPO == 8'hFF && B_div_EXPO == 8'hFF) begin
+            // Handle special case: 0 / 0 = NaN
+            C_div = 32'h7FC00000; // Set result to NaN
+        end else if (A_div_EXPO == 8'hFF) begin
+            // If numerator is NaN, return NaN
+            C_div = 32'h7FC00000; // Set result to NaN
+        end else if (B_div_EXPO  == 8'hFF) begin
+            // If denominator is NaN, return NaN
+            C_div = 32'h7FC00000; // Set result to NaN
+        end else begin
         // diviply mantissas
         mantissa_C_div = ((mantissa_A_div<< 23) / mantissa_B_div );
  // Normalizing the result (if needed)
@@ -178,12 +197,13 @@ module Divider(
             div_EXPO_Sum = div_EXPO_Sum - 1; // Decrease exponent due to normalization        
         
         end        
-  
+    
         
         // Assemble the final output
         C_div[30:23] = div_EXPO_Sum[7:0];
         C_div[22:0] = mantissa_C_div[22:0];
         C_div[31] = A_div[31] ^ B_div[31]; 
-         
+        
+        end 
         end  
 endmodule

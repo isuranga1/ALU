@@ -46,9 +46,21 @@ module Multiplication(
         mantissa_B_mult = {1'b1, B_mult[22:0]}; // Mantissa of B
         
         C_mult = 32'b0; // Initialize output
+     
+        // Check for special cases
+        if (A_mult_EXPO == 8'hFF || B_mult_EXPO == 8'hFF) begin
+            if (mantissa_A_mult != 0 || mantissa_B_mult != 0) begin
+                C_mult = 32'h7FC00000; // NaN case
+            end else if ((A_mult_EXPO == 8'hFF && B_mult_EXPO  == 0) || (A_mult_EXPO == 0 && B_mult_EXPO  == 8'hFF)) begin
+                C_mult = 32'h7FC00000; // Inf * 0 case
+            end else begin
+                 C_mult = {A_mult[31] ^ B_mult[31], 8'hFF, 23'h000000}; // Inf * normal case
+            end
+        end else if (A_mult_EXPO == 0 || B_mult_EXPO == 0) begin
+            C_mult = 32'h00000000; // Zero result
+        end else begin  
         
-        mult_EXPO_Sum = A_mult_EXPO + B_mult_EXPO -8'b01111111 ;
-        
+        mult_EXPO_Sum = A_mult_EXPO + B_mult_EXPO - 8'b01111111 ;
         if (mult_EXPO_Sum[8] == 1'b1) begin
              mult_EXPO_Sum = mult_EXPO_Sum >> 1;
         end
@@ -70,6 +82,6 @@ module Multiplication(
         C_mult[30:23] = mult_EXPO_Sum[7:0];
         
         C_mult[31] = A_mult[31] ^ B_mult[31]; 
-         
+        end 
         end  
 endmodule
