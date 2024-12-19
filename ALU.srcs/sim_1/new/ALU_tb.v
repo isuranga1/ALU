@@ -50,12 +50,14 @@ module ALU_tb;
    // Test cases
    
    // Addition
+   $display("Addition:");
+
         // 1. 1.0 + 2.0
-        A = 32'b00111111100000000000000000000000; // 1.0
-        B = 32'b01000000000000000000000000000000; // 2.0
+        A = 32'h3f800000; // 1.0
+        B = 32'h40000000; // 2.0
         ctrl = 2'b00;
         #20; // Wait for 10 time units
-        $display("%b\t%b\t%b\t%b\t%b", A , B, result,32'b01000000010000000000000000000000, result == 32'b01000000010000000000000000000000); // Experesultted 3.0
+        $display("%b\t%b\t%b\t%b\t%b", A , B, result,32'h40400000, result == 32'h40400000); // Experesultted 3.0
 
         // 2. 3.0 + 5.0
         A = 32'b01000000010000000000000000000000; // 3.0
@@ -117,6 +119,8 @@ module ALU_tb;
         $display("%b\t%b\t%b\t%b\t%b", A, B,result,32'h42e3e24e, result == 32'h42e3e24e); // Experesultted 113.942                        
   
    // Subtraction
+   $display("Subtraction:");
+
         // 1. 2 - 1 
         A = 32'h40000000; // 2.0
         B = 32'h3f800000; // 1.0
@@ -148,6 +152,8 @@ module ALU_tb;
 
        
  // Multiplication
+ $display("Multiplication:");
+
         // 1. 1.0 - 2.0
         A = 32'h40000000; // 2.0
         B = 32'h3f800000; // 1.0 
@@ -184,6 +190,8 @@ module ALU_tb;
         $display("%b\t%b\t%b\t%b\t%b", A, B, result,32'h41a1e982, result == 32'h41a1e982); // Expected 20.23901696
 
 //Division
+$display("Division:");
+
         // 1. 1.0 - 2.0
         A = 32'h40000000; // 2.0
         B = 32'h3f800000; // 1.0 
