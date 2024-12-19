@@ -3,8 +3,8 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Thu Dec 19 22:52:37 2024
-# Process ID: 2664
+# Start of session at: Fri Dec 20 00:41:31 2024
+# Process ID: 10628
 # Current directory: E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.runs/synth_1
 # Command line: vivado.exe -log ALU.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ALU.tcl
 # Log file: E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.runs/synth_1/ALU.vds

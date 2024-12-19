@@ -19,24 +19,31 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
 module ALU(
-    input wire [31:0]  A,    // First operand (32-bit floating point)
-    input wire [31:0]  B,    // Second operand (32-bit floating point)
-    input wire [1:0] ctrl,      // 2-bit control signal to select the operation
-    output reg [31:0] result       // Final result (32-bit floating point)
+    input wire [1:0] ctrl,  // 2-bit control signal to select the operation
+    output reg [3:0] led           // LED output: lights up if the result is correct
 );
 
-    wire [31:0] add_sub_result;    // Output from adder_subtractor
-    wire [31:0] mul_result;        // Output from multiplicator
-    wire [31:0] div_result;        // Output from divider
+    // Hardcoded 32-bit operands (example values)
+    localparam [31:0] A = 32'h40000000;  // Example: 2.0 in IEEE 754
+    localparam [31:0] B = 32'h3f800000;  // Example: 1.0 in IEEE 754
 
-    // Instantiate the adder_subtractor module
+    wire [31:0] add_sub_result;  // Output from adder/subtractor
+    wire [31:0] mul_result;      // Output from multiplier
+    wire [31:0] div_result;      // Output from divider
+
+    // Predefined "correct" results for each operation
+    localparam [31:0] CORRECT_ADD = 32'h40400000;  // 5.0 in IEEE 754
+    localparam [31:0] CORRECT_SUB = 32'h3f800000;  // 1.0 in IEEE 754
+    localparam [31:0] CORRECT_MUL = 32'h40000000;  // 6.0 in IEEE 754
+    localparam [31:0] CORRECT_DIV = 32'h40000000;  // 1.5 in IEEE 754
+
+    // Instantiate the adder/subtractor module
     Adder_Subtractor adder_sub(
         .A_addsub(A),
         .B_addsub(B),
         .C_addsub(add_sub_result),
-        .ctrl(ctrl[0])
+        .ctrl(ctrl[0])           // Use ctrl[0] to distinguish add/sub
     );
 
     // Instantiate the multiplicator module
@@ -53,15 +60,18 @@ module ALU(
         .C_div(div_result)
     );
 
-    // MUX to select the result based on control signal
+    // LED logic: light up if the result matches the correct value
     always @(*) begin
         case(ctrl)
-            2'b00: result  = add_sub_result; // Select adder  for 00
-            2'b01: result  = add_sub_result; // Select subtractor for 01
-            2'b10: result  = mul_result;     // Select multiplicator for 10
-            2'b11: result  = div_result;     // Select divider for 11
-            //default: result  = 32'b0;        // Default case, if needed
+            2'b00: led[0] = (add_sub_result == CORRECT_ADD); // Check for addition result
+            2'b01: led[1] = (add_sub_result == CORRECT_SUB); // Check for subtraction result
+            2'b10: led[2] = (mul_result == CORRECT_MUL);     // Check for multiplication result
+            2'b11: led[3] = (div_result == CORRECT_DIV);     // Check for division result
+            default: led = 4'b0;                         // Default: LED off
         endcase
     end
 
 endmodule
+
+
+

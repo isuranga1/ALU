@@ -70,6 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 2
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z010clg400-1
 
@@ -101,6 +103,9 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc
+set_property used_in_implementation false [get_files E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc]
+
 set_param ips.enableIPCacheLiteLoad 1
 
 read_checkpoint -auto_incremental -incremental E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/utils_1/imports/synth_1/Adder.dcp
