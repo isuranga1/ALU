@@ -3,8 +3,8 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Fri Dec 20 00:41:31 2024
-# Process ID: 10628
+# Start of session at: Mon Dec 23 20:01:11 2024
+# Process ID: 9908
 # Current directory: E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.runs/synth_1
 # Command line: vivado.exe -log ALU.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ALU.tcl
 # Log file: E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.runs/synth_1/ALU.vds
@@ -12,7 +12,7 @@
 # Running On: DESKTOP-BNN7EGG, OS: Windows, CPU Frequency: 2803 MHz, CPU Physical cores: 4, Host memory: 16844 MB
 #-----------------------------------------------------------
 source ALU.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 437.543 ; gain = 161.055
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 437.371 ; gain = 162.453
 Command: read_checkpoint -auto_incremental -incremental E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/utils_1/imports/synth_1/Adder.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/utils_1/imports/synth_1/Adder.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -25,14 +25,14 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 10192
+INFO: [Synth 8-7075] Helper process launched with PID 16164
 WARNING: [Synth 8-9694] invalid size of integer constant literal [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/sources_1/new/Adder_Subtractor.v:85]
 WARNING: [Synth 8-9694] invalid size of integer constant literal [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/sources_1/new/Adder_Subtractor.v:90]
 WARNING: [Synth 8-9694] invalid size of integer constant literal [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/sources_1/new/Adder_Subtractor.v:102]
 WARNING: [Synth 8-9694] invalid size of integer constant literal [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/sources_1/new/Adder_Subtractor.v:126]
 WARNING: [Synth 8-9694] invalid size of integer constant literal [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/sources_1/new/Adder_Subtractor.v:127]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1257.895 ; gain = 411.730
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1257.266 ; gain = 410.973
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'ALU' [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/sources_1/new/ALU.v:22]
 INFO: [Synth 8-6157] synthesizing module 'Adder_Subtractor' [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/sources_1/new/Adder_Subtractor.v:23]
@@ -45,25 +45,24 @@ INFO: [Synth 8-6157] synthesizing module 'Multiplication' [E:/ENTC/5th_sem/Digit
 INFO: [Synth 8-6155] done synthesizing module 'Multiplication' (0#1) [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/sources_1/new/Multiplication.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Divider' [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/sources_1/new/Divider.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'Divider' (0#1) [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/sources_1/new/Divider.v:23]
-INFO: [Synth 8-226] default block is never used [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/sources_1/new/ALU.v:65]
 INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/sources_1/new/ALU.v:22]
 WARNING: [Synth 8-3936] Found unconnected internal register 'mantissa_C_add_reg' and it is trimmed from '25' to '23' bits. [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/sources_1/new/Adder.v:65]
 WARNING: [Synth 8-3936] Found unconnected internal register 'mantissa_C_sub_reg' and it is trimmed from '24' to '23' bits. [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/sources_1/new/Subtractor.v:64]
 WARNING: [Synth 8-7129] Port B_sub[31] in module Subtractor is either unconnected or has no load
 WARNING: [Synth 8-7129] Port B_add[31] in module Adder is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1356.648 ; gain = 510.484
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1356.090 ; gain = 509.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1356.648 ; gain = 510.484
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1356.090 ; gain = 509.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1356.648 ; gain = 510.484
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1356.090 ; gain = 509.797
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1356.648 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1356.090 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -74,34 +73,33 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/ALU_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1404.844 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1459.641 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1404.844 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1459.641 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1404.844 ; gain = 558.680
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 1459.641 ; gain = 613.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1404.844 ; gain = 558.680
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 1459.641 ; gain = 613.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1404.844 ; gain = 558.680
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1459.641 ; gain = 613.348
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-327] inferring latch for variable 'A_addsub_reg_reg' [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/sources_1/new/Adder_Subtractor.v:38]
 WARNING: [Synth 8-327] inferring latch for variable 'B_addsub_reg_reg' [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/sources_1/new/Adder_Subtractor.v:39]
-WARNING: [Synth 8-327] inferring latch for variable 'led_reg' [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/sources_1/new/ALU.v:66]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 1404.844 ; gain = 558.680
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1459.641 ; gain = 613.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -124,6 +122,7 @@ Detailed RTL Component Info :
 	   2 Input   23 Bit        Muxes := 27    
 	   2 Input    8 Bit        Muxes := 29    
 	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
 	   2 Input    2 Bit        Muxes := 24    
 	   2 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
@@ -208,28 +207,26 @@ WARNING: [Synth 8-3332] Sequential element (B_addsub_reg_reg[3]) is unused and w
 WARNING: [Synth 8-3332] Sequential element (B_addsub_reg_reg[2]) is unused and will be removed from module Adder_Subtractor.
 WARNING: [Synth 8-3332] Sequential element (B_addsub_reg_reg[1]) is unused and will be removed from module Adder_Subtractor.
 WARNING: [Synth 8-3332] Sequential element (B_addsub_reg_reg[0]) is unused and will be removed from module Adder_Subtractor.
-WARNING: [Synth 8-3332] Sequential element (led_reg[3]) is unused and will be removed from module ALU.
-WARNING: [Synth 8-3332] Sequential element (led_reg[2]) is unused and will be removed from module ALU.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 1404.844 ; gain = 558.680
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1459.641 ; gain = 613.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 1404.844 ; gain = 558.680
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1459.641 ; gain = 613.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 1404.844 ; gain = 558.680
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1459.641 ; gain = 613.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 1404.844 ; gain = 558.680
+Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1459.641 ; gain = 613.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -247,37 +244,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 1404.844 ; gain = 558.680
+Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 1459.641 ; gain = 613.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 1404.844 ; gain = 558.680
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 1459.641 ; gain = 613.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 1404.844 ; gain = 558.680
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 1459.641 ; gain = 613.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 1404.844 ; gain = 558.680
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 1459.641 ; gain = 613.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 1404.844 ; gain = 558.680
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 1459.641 ; gain = 613.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 1404.844 ; gain = 558.680
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 1459.641 ; gain = 613.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -293,34 +290,29 @@ Report Cell Usage:
 +------+-----+------+
 |      |Cell |Count |
 +------+-----+------+
-|1     |LUT1 |     1|
-|2     |LUT2 |     2|
-|3     |LD   |     2|
-|4     |IBUF |     2|
-|5     |OBUF |     4|
+|1     |LUT3 |     4|
+|2     |IBUF |     3|
+|3     |OBUF |     4|
 +------+-----+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 1404.844 ; gain = 558.680
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 1459.641 ; gain = 613.348
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 72 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:36 . Memory (MB): peak = 1404.844 ; gain = 510.484
-Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 1404.844 ; gain = 558.680
+Synthesis finished with 0 errors, 0 critical warnings and 69 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:36 . Memory (MB): peak = 1459.641 ; gain = 509.797
+Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 1459.641 ; gain = 613.348
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1404.844 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1459.641 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1404.844 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1459.641 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 2 instances were transformed.
-  LD => LDCE: 2 instances
+No Unisim elements were transformed.
 
-Synth Design complete | Checksum: fe25e8e2
+Synth Design complete | Checksum: 4b88b037
 INFO: [Common 17-83] Releasing license: Synthesis
-34 Infos, 81 Warnings, 0 Critical Warnings and 0 Errors encountered.
+31 Infos, 78 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:46 . Memory (MB): peak = 1404.844 ; gain = 942.434
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:46 . Memory (MB): peak = 1459.641 ; gain = 997.383
 INFO: [Common 17-1381] The checkpoint 'E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.runs/synth_1/ALU.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file ALU_utilization_synth.rpt -pb ALU_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Dec 20 00:42:28 2024...
+INFO: [Common 17-206] Exiting Vivado at Mon Dec 23 20:02:09 2024...

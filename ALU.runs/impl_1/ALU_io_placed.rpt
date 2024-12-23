@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date                      : Fri Dec 20 00:43:14 2024
+| Date                      : Mon Dec 23 20:02:55 2024
 | Host                      : DESKTOP-BNN7EGG running 64-bit major release  (build 9200)
 | Command                   : report_io -file ALU_io_placed.rpt
 | Design                    : ALU
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|             6 |
+|             7 |
 +---------------+
 
 
@@ -407,7 +407,7 @@ Table of Contents
 | W10        |             |            | NC                      | Not Connected |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | W11        |             |            | NC                      | Not Connected |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | W12        |             |            | GND                     | GND           |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
-| W13        |             | High Range | IO_L4N_T0_34            | User IO       |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| W13        | ctrl[2]     | High Range | IO_L4N_T0_34            | INPUT         | LVCMOS33    |      34 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | W14        |             | High Range | IO_L8P_T1_34            | User IO       |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | W15        |             | High Range | IO_L10N_T1_34           | User IO       |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | W16        |             | High Range | IO_L18N_T2_34           | User IO       |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |

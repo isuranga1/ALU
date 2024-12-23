@@ -20,8 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module ALU(
-    input wire [1:0] ctrl,  // 2-bit control signal to select the operation
-    output reg [3:0] led           // LED output: lights up if the result is correct
+    input wire [2:0] ctrl,  // 2-bit control signal to select the operation
+    output reg [3:0] led         // LED output: lights up if the result is correct
 );
 
     // Hardcoded 32-bit operands (example values)
@@ -61,13 +61,35 @@ module ALU(
     );
 
     // LED logic: light up if the result matches the correct value
+   // LED logic: light up the corresponding LED if the result matches
+    // LED logic: light up the corresponding LED if the result matches
     always @(*) begin
         case(ctrl)
-            2'b00: led[0] = (add_sub_result == CORRECT_ADD); // Check for addition result
-            2'b01: led[1] = (add_sub_result == CORRECT_SUB); // Check for subtraction result
-            2'b10: led[2] = (mul_result == CORRECT_MUL);     // Check for multiplication result
-            2'b11: led[3] = (div_result == CORRECT_DIV);     // Check for division result
-            default: led = 4'b0;                         // Default: LED off
+            3'b100: begin // Addition
+                led[0] = (add_sub_result == CORRECT_ADD); // Turn on LED[0] if addition is correct
+                led[1] = 1'b0;
+                led[2] = 1'b0;
+                led[3] = 1'b0;
+            end
+            3'b101: begin // Subtraction
+                led[1] = (add_sub_result == CORRECT_SUB); // Turn on LED[1] if subtraction is correct
+                led[0] = 1'b0;
+                led[2] = 1'b0;
+                led[3] = 1'b0;
+            end
+            3'b110: begin // Multiplication
+                led[2] = (mul_result == CORRECT_MUL);     // Turn on LED[2] if multiplication is correct
+                led[0] = 1'b0;
+                led[1] = 1'b0;
+                led[3] = 1'b0;
+            end
+            3'b111: begin // Division
+                led[3] = (div_result == CORRECT_DIV);     // Turn on LED[3] if division is correct
+                led[0] = 1'b0;
+                led[1] = 1'b0;
+                led[2] = 1'b0;
+            end
+            default: led = 4'b0000; // Default: all LEDs off
         endcase
     end
 
