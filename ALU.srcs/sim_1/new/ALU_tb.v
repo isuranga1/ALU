@@ -30,7 +30,7 @@ module ALU_tb;
     wire [31:0] result; // Output C
 
     // Instantiate the Adder module
-    ALU_ uut (
+    ALU uut (
         .A(A),
         .B(B),
         .ctrl(ctrl),

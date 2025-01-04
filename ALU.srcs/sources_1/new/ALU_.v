@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module ALU_(
+module ALU(
     input wire [31:0]  A,    // First operand (32-bit floating point)
     input wire [31:0]  B,    // Second operand (32-bit floating point)
     input wire [1:0] ctrl,      // 2-bit control signal to select the operation

@@ -3,12 +3,12 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Sat Jan  4 15:16:20 2025
-# Process ID: 19172
+# Start of session at: Sat Jan  4 15:32:25 2025
+# Process ID: 1556
 # Current directory: E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.runs/synth_1
-# Command line: vivado.exe -log ALU_.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ALU_.tcl
-# Log file: E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.runs/synth_1/ALU_.vds
+# Command line: vivado.exe -log Top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top.tcl
+# Log file: E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.runs/synth_1/Top.vds
 # Journal file: E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.runs/synth_1\vivado.jou
 # Running On: DESKTOP-BNN7EGG, OS: Windows, CPU Frequency: 2803 MHz, CPU Physical cores: 4, Host memory: 16844 MB
 #-----------------------------------------------------------
-source ALU_.tcl -notrace
+source Top.tcl -notrace

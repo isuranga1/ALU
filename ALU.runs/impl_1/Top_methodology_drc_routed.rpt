@@ -1,0 +1,42 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date         : Sat Jan  4 15:34:43 2025
+| Host         : DESKTOP-BNN7EGG running 64-bit major release  (build 9200)
+| Command      : report_methodology -file Top_methodology_drc_routed.rpt -pb Top_methodology_drc_routed.pb -rpx Top_methodology_drc_routed.rpx
+| Design       : Top
+| Device       : xc7z010clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 1
++--------+----------+------------------------------------------------------+------------+
+| Rule   | Severity | Description                                          | Violations |
++--------+----------+------------------------------------------------------+------------+
+| XDCC-4 | Warning  | User Clock constraint overwritten with the same name | 1          |
++--------+----------+------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+XDCC-4#1 Warning
+User Clock constraint overwritten with the same name  
+A new clock constraint create_clock overrides a previous user clock constraint with the same name.
+New: create_clock -period 1.500 -name clock1 -waveform {0.000 0.750} -add (Source: E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc (Line: 16))
+Previous: create_clock -period 1.500 -name clock1 -waveform {0.000 0.750} -add (Source: E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc (Line: 13))
+Related violations: <none>
+
+
