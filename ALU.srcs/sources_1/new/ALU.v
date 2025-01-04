@@ -13,13 +13,7 @@
 // 
 // Dependencies: 
 // 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-module ALU(
+    module ALU(
     input wire [2:0] ctrl,  // 2-bit control signal to select the operation
     output reg [3:0] led         // LED output: lights up if the result is correct
 );

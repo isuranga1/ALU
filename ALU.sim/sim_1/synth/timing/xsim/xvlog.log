@@ -1,0 +1,10 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.sim/sim_1/synth/timing/xsim/ALU_tb_time_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_
+INFO: [VRFC 10-311] analyzing module Adder
+INFO: [VRFC 10-311] analyzing module Adder_Subtractor
+INFO: [VRFC 10-311] analyzing module Divider
+INFO: [VRFC 10-311] analyzing module Multiplication
+INFO: [VRFC 10-311] analyzing module Subtractor
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/sim_1/new/ALU_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_tb

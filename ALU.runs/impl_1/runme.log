@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log ALU.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source ALU.tcl -notrace
+    with args -log ALU_.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source ALU_.tcl -notrace
 
 
 ECHO is off.
@@ -13,25 +13,44 @@ ECHO is off.
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
-source ALU.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 437.016 ; gain = 162.309
-Command: link_design -top ALU -part xc7z010clg400-1
+source ALU_.tcl -notrace
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 437.598 ; gain = 161.531
+Command: link_design -top ALU_ -part xc7z010clg400-1
 Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
 INFO: [Device 21-403] Loading part xc7z010clg400-1
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 848.016 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 847.277 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 372 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2023.1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 Parsing XDC File [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc]
+WARNING: [Vivado 12-584] No ports matched 'ctrl[2]'. [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc:5]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc:5]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc:8]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc:9]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc:9]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[2]'. [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc:10]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc:10]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[3]'. [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc:11]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc:11]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clock1' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc:13]
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clock1' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc:16]
 Finished Parsing XDC File [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc]
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 970.652 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 988.531 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-5 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+9 Infos, 5 Warnings, 5 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 974.633 ; gain = 532.652
+link_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 988.531 ; gain = 545.938
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
@@ -42,54 +61,59 @@ INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.815 . Memory (MB): peak = 986.586 ; gain = 11.953
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1010.676 ; gain = 22.145
 
 Starting Cache Timing Information Task
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clock1' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc:13]
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clock1' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc:16]
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Ending Cache Timing Information Task | Checksum: 19239b09e
+Ending Cache Timing Information Task | Checksum: 168af6518
 
-Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1484.883 ; gain = 498.297
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1495.922 ; gain = 485.246
 
 Starting Logic Optimization Task
 
 Phase 1 Retarget
+INFO: [Opt 31-1566] Pulled 1 inverters resulting in an inversion of 30 pins
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 1 Retarget | Checksum: 19239b09e
+Phase 1 Retarget | Checksum: 1df00bb05
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1820.871 ; gain = 0.000
-INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.149 . Memory (MB): peak = 1833.652 ; gain = 0.000
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 4 cells
 
 Phase 2 Constant propagation
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Phase 2 Constant propagation | Checksum: 19239b09e
+Phase 2 Constant propagation | Checksum: 230040cff
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1820.871 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.201 . Memory (MB): peak = 1833.652 ; gain = 0.000
 INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
 
 Phase 3 Sweep
-Phase 3 Sweep | Checksum: 19239b09e
+Phase 3 Sweep | Checksum: 279a32156
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1820.871 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.271 . Memory (MB): peak = 1833.652 ; gain = 0.000
 INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
 
 Phase 4 BUFG optimization
-Phase 4 BUFG optimization | Checksum: 19239b09e
+INFO: [Opt 31-194] Inserted BUFG adder_sub/A_addsub_reg_reg[31]_i_3_n_0_BUFG_inst to drive 79 load(s) on clock net adder_sub/A_addsub_reg_reg[31]_i_3_n_0_BUFG
+INFO: [Opt 31-193] Inserted 1 BUFG(s) on clock nets
+Phase 4 BUFG optimization | Checksum: 232726acd
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 1820.871 ; gain = 0.000
-INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.360 . Memory (MB): peak = 1833.652 ; gain = 0.000
+INFO: [Opt 31-662] Phase BUFG optimization created 1 cells of which 1 are BUFGs and removed 0 cells.
 
 Phase 5 Shift Register Optimization
 INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
-Phase 5 Shift Register Optimization | Checksum: 19239b09e
+Phase 5 Shift Register Optimization | Checksum: 28c5f505f
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 1820.871 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.567 . Memory (MB): peak = 1833.652 ; gain = 0.000
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 6 Post Processing Netlist
-Phase 6 Post Processing Netlist | Checksum: 19239b09e
+Phase 6 Post Processing Netlist | Checksum: 28c5f505f
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 1820.871 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.578 . Memory (MB): peak = 1833.652 ; gain = 0.000
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
 Opt_design Change Summary
 =========================
@@ -98,10 +122,10 @@ Opt_design Change Summary
 -------------------------------------------------------------------------------------------------------------------------
 |  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
 -------------------------------------------------------------------------------------------------------------------------
-|  Retarget                     |               0  |               0  |                                              0  |
+|  Retarget                     |               0  |               4  |                                              0  |
 |  Constant propagation         |               0  |               0  |                                              0  |
 |  Sweep                        |               0  |               0  |                                              0  |
-|  BUFG optimization            |               0  |               0  |                                              0  |
+|  BUFG optimization            |               1  |               0  |                                              0  |
 |  Shift Register Optimization  |               0  |               0  |                                              0  |
 |  Post Processing Netlist      |               0  |               0  |                                              0  |
 -------------------------------------------------------------------------------------------------------------------------
@@ -110,45 +134,45 @@ Opt_design Change Summary
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1820.871 ; gain = 0.000
-Ending Logic Optimization Task | Checksum: 19239b09e
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1833.652 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 28c5f505f
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 1820.871 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.589 . Memory (MB): peak = 1833.652 ; gain = 0.000
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
-Ending Power Optimization Task | Checksum: 19239b09e
+Ending Power Optimization Task | Checksum: 28c5f505f
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1820.871 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1833.652 ; gain = 0.000
 
 Starting Final Cleanup Task
-Ending Final Cleanup Task | Checksum: 19239b09e
+Ending Final Cleanup Task | Checksum: 28c5f505f
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1820.871 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1833.652 ; gain = 0.000
 
 Starting Netlist Obfuscation Task
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1820.871 ; gain = 0.000
-Ending Netlist Obfuscation Task | Checksum: 19239b09e
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1833.652 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 28c5f505f
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1820.871 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1833.652 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
-22 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+31 Infos, 5 Warnings, 5 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1820.871 ; gain = 846.238
-INFO: [runtcl-4] Executing : report_drc -file ALU_drc_opted.rpt -pb ALU_drc_opted.pb -rpx ALU_drc_opted.rpx
-Command: report_drc -file ALU_drc_opted.rpt -pb ALU_drc_opted.pb -rpx ALU_drc_opted.rpx
+opt_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1833.652 ; gain = 845.121
+INFO: [runtcl-4] Executing : report_drc -file ALU__drc_opted.rpt -pb ALU__drc_opted.pb -rpx ALU__drc_opted.rpx
+Command: report_drc -file ALU__drc_opted.rpt -pb ALU__drc_opted.pb -rpx ALU__drc_opted.rpx
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Vivado/Vivado/2023.1/data/ip'.
 INFO: [DRC 23-27] Running DRC with 2 threads
-INFO: [Vivado_Tcl 2-168] The results of DRC are in file E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.runs/impl_1/ALU_drc_opted.rpt.
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.runs/impl_1/ALU__drc_opted.rpt.
 report_drc completed successfully
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.076 . Memory (MB): peak = 1820.871 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.runs/impl_1/ALU_opt.dcp' has been generated.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.095 . Memory (MB): peak = 1833.652 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.runs/impl_1/ALU__opt.dcp' has been generated.
 Command: place_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
@@ -166,391 +190,334 @@ INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1820.871 ; gain = 0.000
-Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 146b10067
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1833.652 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 19a160258
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1820.871 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1820.871 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1833.652 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1833.652 ; gain = 0.000
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clock1' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc:13]
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clock1' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.srcs/constrs_1/new/ALU_cs.xdc:16]
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 146b10067
+ERROR: [Place 30-58] IO placement is infeasible. Number of unplaced IO Ports (64) is greater than number of available sites (0).
+The following are banks with available pins: 
+ IO Group: 0 with : SioStd: LVCMOS18   VCCO = 1.8 Termination: 0  TermDir:  In   RangeId: 1  has only 0 sites available on device, but needs 64 sites.
+	Term: A[0]
+	Term: A[1]
+	Term: A[2]
+	Term: A[3]
+	Term: A[4]
+	Term: A[5]
+	Term: A[6]
+	Term: A[7]
+	Term: A[8]
+	Term: A[9]
+	Term: A[10]
+	Term: A[11]
+	Term: A[12]
+	Term: A[13]
+	Term: A[14]
+	Term: A[15]
+	Term: A[16]
+	Term: A[17]
+	Term: A[18]
+	Term: A[19]
+	Term: A[20]
+	Term: A[21]
+	Term: A[22]
+	Term: A[23]
+	Term: A[24]
+	Term: A[25]
+	Term: A[26]
+	Term: A[27]
+	Term: A[28]
+	Term: A[29]
+	Term: A[30]
+	Term: A[31]
+	Term: B[0]
+	Term: B[1]
+	Term: B[2]
+	Term: B[3]
+	Term: B[4]
+	Term: B[5]
+	Term: B[6]
+	Term: B[7]
+	Term: B[8]
+	Term: B[9]
+	Term: B[10]
+	Term: B[11]
+	Term: B[12]
+	Term: B[13]
+	Term: B[14]
+	Term: B[15]
+	Term: B[16]
+	Term: B[17]
+	Term: B[18]
+	Term: B[19]
+	Term: B[20]
+	Term: B[21]
+	Term: B[22]
+	Term: B[23]
+	Term: B[24]
+	Term: B[25]
+	Term: B[26]
+	Term: B[27]
+	Term: B[28]
+	Term: B[29]
+	Term: B[30]
+	Term: B[31]
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.121 . Memory (MB): peak = 1820.871 ; gain = 0.000
 
-Phase 1.3 Build Placer Netlist Model
-Phase 1.3 Build Placer Netlist Model | Checksum: 1fbfad0a9
+Resolution: Consider using Xilinx part with greater number of IO pins
+ERROR: [Place 30-58] IO placement is infeasible. Number of unplaced IO Ports (32) is greater than number of available sites (0).
+The following are banks with available pins: 
+ IO Group: 0 with : SioStd: LVCMOS18   VCCO = 1.8 Termination: 0  TermDir:  In   RangeId: 1  has only 0 sites available on device, but needs 64 sites.
+	Term: A[0]
+	Term: A[1]
+	Term: A[2]
+	Term: A[3]
+	Term: A[4]
+	Term: A[5]
+	Term: A[6]
+	Term: A[7]
+	Term: A[8]
+	Term: A[9]
+	Term: A[10]
+	Term: A[11]
+	Term: A[12]
+	Term: A[13]
+	Term: A[14]
+	Term: A[15]
+	Term: A[16]
+	Term: A[17]
+	Term: A[18]
+	Term: A[19]
+	Term: A[20]
+	Term: A[21]
+	Term: A[22]
+	Term: A[23]
+	Term: A[24]
+	Term: A[25]
+	Term: A[26]
+	Term: A[27]
+	Term: A[28]
+	Term: A[29]
+	Term: A[30]
+	Term: A[31]
+	Term: B[0]
+	Term: B[1]
+	Term: B[2]
+	Term: B[3]
+	Term: B[4]
+	Term: B[5]
+	Term: B[6]
+	Term: B[7]
+	Term: B[8]
+	Term: B[9]
+	Term: B[10]
+	Term: B[11]
+	Term: B[12]
+	Term: B[13]
+	Term: B[14]
+	Term: B[15]
+	Term: B[16]
+	Term: B[17]
+	Term: B[18]
+	Term: B[19]
+	Term: B[20]
+	Term: B[21]
+	Term: B[22]
+	Term: B[23]
+	Term: B[24]
+	Term: B[25]
+	Term: B[26]
+	Term: B[27]
+	Term: B[28]
+	Term: B[29]
+	Term: B[30]
+	Term: B[31]
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.133 . Memory (MB): peak = 1820.871 ; gain = 0.000
 
-Phase 1.4 Constrain Clocks/Macros
-Phase 1.4 Constrain Clocks/Macros | Checksum: 1fbfad0a9
+ IO Group: 1 with : SioStd: LVCMOS18   VCCO = 1.8 Termination: 0  TermDir:  Out  RangeId: 1 Drv: 12  has only 0 sites available on device, but needs 32 sites.
+	Term: result[0]
+	Term: result[1]
+	Term: result[2]
+	Term: result[3]
+	Term: result[4]
+	Term: result[5]
+	Term: result[6]
+	Term: result[7]
+	Term: result[8]
+	Term: result[9]
+	Term: result[10]
+	Term: result[11]
+	Term: result[12]
+	Term: result[13]
+	Term: result[14]
+	Term: result[15]
+	Term: result[16]
+	Term: result[17]
+	Term: result[18]
+	Term: result[19]
+	Term: result[20]
+	Term: result[21]
+	Term: result[22]
+	Term: result[23]
+	Term: result[24]
+	Term: result[25]
+	Term: result[26]
+	Term: result[27]
+	Term: result[28]
+	Term: result[29]
+	Term: result[30]
+	Term: result[31]
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.136 . Memory (MB): peak = 1820.871 ; gain = 0.000
-Phase 1 Placer Initialization | Checksum: 1fbfad0a9
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.138 . Memory (MB): peak = 1820.871 ; gain = 0.000
+Resolution: Consider using Xilinx part with greater number of IO pins
+ERROR: [Place 30-58] IO placement is infeasible. Number of unplaced IO Ports (96) is greater than number of available sites (0).
+The following are banks with available pins: 
+ IO Group: 0 with : SioStd: LVCMOS18   VCCO = 1.8 Termination: 0  TermDir:  In   RangeId: 1  has only 0 sites available on device, but needs 64 sites.
+	Term: A[0]
+	Term: A[1]
+	Term: A[2]
+	Term: A[3]
+	Term: A[4]
+	Term: A[5]
+	Term: A[6]
+	Term: A[7]
+	Term: A[8]
+	Term: A[9]
+	Term: A[10]
+	Term: A[11]
+	Term: A[12]
+	Term: A[13]
+	Term: A[14]
+	Term: A[15]
+	Term: A[16]
+	Term: A[17]
+	Term: A[18]
+	Term: A[19]
+	Term: A[20]
+	Term: A[21]
+	Term: A[22]
+	Term: A[23]
+	Term: A[24]
+	Term: A[25]
+	Term: A[26]
+	Term: A[27]
+	Term: A[28]
+	Term: A[29]
+	Term: A[30]
+	Term: A[31]
+	Term: B[0]
+	Term: B[1]
+	Term: B[2]
+	Term: B[3]
+	Term: B[4]
+	Term: B[5]
+	Term: B[6]
+	Term: B[7]
+	Term: B[8]
+	Term: B[9]
+	Term: B[10]
+	Term: B[11]
+	Term: B[12]
+	Term: B[13]
+	Term: B[14]
+	Term: B[15]
+	Term: B[16]
+	Term: B[17]
+	Term: B[18]
+	Term: B[19]
+	Term: B[20]
+	Term: B[21]
+	Term: B[22]
+	Term: B[23]
+	Term: B[24]
+	Term: B[25]
+	Term: B[26]
+	Term: B[27]
+	Term: B[28]
+	Term: B[29]
+	Term: B[30]
+	Term: B[31]
 
-Phase 2 Global Placement
 
-Phase 2.1 Floorplanning
-Phase 2.1 Floorplanning | Checksum: 1fbfad0a9
+ IO Group: 1 with : SioStd: LVCMOS18   VCCO = 1.8 Termination: 0  TermDir:  Out  RangeId: 1 Drv: 12  has only 0 sites available on device, but needs 32 sites.
+	Term: result[0]
+	Term: result[1]
+	Term: result[2]
+	Term: result[3]
+	Term: result[4]
+	Term: result[5]
+	Term: result[6]
+	Term: result[7]
+	Term: result[8]
+	Term: result[9]
+	Term: result[10]
+	Term: result[11]
+	Term: result[12]
+	Term: result[13]
+	Term: result[14]
+	Term: result[15]
+	Term: result[16]
+	Term: result[17]
+	Term: result[18]
+	Term: result[19]
+	Term: result[20]
+	Term: result[21]
+	Term: result[22]
+	Term: result[23]
+	Term: result[24]
+	Term: result[25]
+	Term: result[26]
+	Term: result[27]
+	Term: result[28]
+	Term: result[29]
+	Term: result[30]
+	Term: result[31]
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.139 . Memory (MB): peak = 1820.871 ; gain = 0.000
 
-Phase 2.2 Update Timing before SLR Path Opt
-Phase 2.2 Update Timing before SLR Path Opt | Checksum: 1fbfad0a9
+Resolution: Consider using Xilinx part with greater number of IO pins
+ERROR: [Place 30-374] IO placer failed to find a solution
+Below is the partial placement that can be analyzed to see if any constraint modifications will make the IO placement problem easier to solve.
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.140 . Memory (MB): peak = 1820.871 ; gain = 0.000
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                     IO Placement : Bank Stats                                                                           |
++----+-------+-------+------------------------------------------------------------------------+------------------------------------------+--------+--------+--------+-----+
+| Id | Pins  | Terms |                               Standards                                |                IDelayCtrls               |  VREF  |  VCCO  |   VR   | DCI |
++----+-------+-------+------------------------------------------------------------------------+------------------------------------------+--------+--------+--------+-----+
+|  0 |     0 |     0 |                                                                        |                                          |        |        |        |     |
+| 13 |     0 |     0 |                                                                        |                                          |        |        |        |     |
+| 34 |    50 |     1 | LVCMOS33(1)                                                            |                                          |        |  +3.30 |    YES |     |
+| 35 |    50 |     1 | LVCMOS33(1)                                                            |                                          |        |  +3.30 |    YES |     |
++----+-------+-------+------------------------------------------------------------------------+------------------------------------------+--------+--------+--------+-----+
+|    |   100 |     2 |                                                                        |                                          |        |        |        |     |
++----+-------+-------+------------------------------------------------------------------------+------------------------------------------+--------+--------+--------+-----+
 
-Phase 2.3 Post-Processing in Floorplanning
-Phase 2.3 Post-Processing in Floorplanning | Checksum: 1fbfad0a9
+IO Placement:
++--------+----------------------+-----------------+----------------------+----------------------+----------------------+
+| BankId |             Terminal | Standard        | Site                 | Pin                  | Attributes           |
++--------+----------------------+-----------------+----------------------+----------------------+----------------------+
+| 34     | ctrl[1]              | LVCMOS33        | IOB_X0Y2             | P15                  |                      |
++--------+----------------------+-----------------+----------------------+----------------------+----------------------+
+| 35     | ctrl[0]              | LVCMOS33        | IOB_X0Y61            | G15                  | *                    |
++--------+----------------------+-----------------+----------------------+----------------------+----------------------+
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.140 . Memory (MB): peak = 1820.871 ; gain = 0.000
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 19a160258
 
-Phase 2.4 Global Placement Core
-WARNING: [Place 46-29] Timing had been disabled during Placer and, therefore, physical synthesis in Placer will be skipped.
-Phase 2.4 Global Placement Core | Checksum: 1eb844caf
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.644 . Memory (MB): peak = 1833.652 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 19a160258
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.629 . Memory (MB): peak = 1820.871 ; gain = 0.000
-Phase 2 Global Placement | Checksum: 1eb844caf
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.645 . Memory (MB): peak = 1833.652 ; gain = 0.000
+ERROR: [Place 30-99] Placer failed with error: 'IO Clock Placer failed'
+Please review all ERROR, CRITICAL WARNING, and WARNING messages during placement to understand the cause for failure.
+Ending Placer Task | Checksum: 19a160258
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.631 . Memory (MB): peak = 1820.871 ; gain = 0.000
-
-Phase 3 Detail Placement
-
-Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 1eb844caf
-
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.632 . Memory (MB): peak = 1820.871 ; gain = 0.000
-
-Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1868bff81
-
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.634 . Memory (MB): peak = 1820.871 ; gain = 0.000
-
-Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: 2464e4876
-
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.648 . Memory (MB): peak = 1820.871 ; gain = 0.000
-
-Phase 3.4 Pipeline Register Optimization
-Phase 3.4 Pipeline Register Optimization | Checksum: 2464e4876
-
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.648 . Memory (MB): peak = 1820.871 ; gain = 0.000
-
-Phase 3.5 Small Shape Detail Placement
-Phase 3.5 Small Shape Detail Placement | Checksum: 213eb3378
-
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.729 . Memory (MB): peak = 1820.871 ; gain = 0.000
-
-Phase 3.6 Re-assign LUT pins
-Phase 3.6 Re-assign LUT pins | Checksum: 213eb3378
-
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.730 . Memory (MB): peak = 1820.871 ; gain = 0.000
-
-Phase 3.7 Pipeline Register Optimization
-Phase 3.7 Pipeline Register Optimization | Checksum: 213eb3378
-
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.731 . Memory (MB): peak = 1820.871 ; gain = 0.000
-Phase 3 Detail Placement | Checksum: 213eb3378
-
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.731 . Memory (MB): peak = 1820.871 ; gain = 0.000
-
-Phase 4 Post Placement Optimization and Clean-Up
-
-Phase 4.1 Post Commit Optimization
-Phase 4.1 Post Commit Optimization | Checksum: 213eb3378
-
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.749 . Memory (MB): peak = 1820.871 ; gain = 0.000
-
-Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: 213eb3378
-
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.751 . Memory (MB): peak = 1820.871 ; gain = 0.000
-
-Phase 4.3 Placer Reporting
-
-Phase 4.3.1 Print Estimated Congestion
-INFO: [Place 30-612] Post-Placement Estimated Congestion 
- ____________________________________________________
-|           | Global Congestion | Short Congestion  |
-| Direction | Region Size       | Region Size       |
-|___________|___________________|___________________|
-|      North|                1x1|                1x1|
-|___________|___________________|___________________|
-|      South|                1x1|                1x1|
-|___________|___________________|___________________|
-|       East|                1x1|                1x1|
-|___________|___________________|___________________|
-|       West|                1x1|                1x1|
-|___________|___________________|___________________|
-
-Phase 4.3.1 Print Estimated Congestion | Checksum: 213eb3378
-
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.751 . Memory (MB): peak = 1820.871 ; gain = 0.000
-Phase 4.3 Placer Reporting | Checksum: 213eb3378
-
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.752 . Memory (MB): peak = 1820.871 ; gain = 0.000
-
-Phase 4.4 Final Placement Cleanup
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1820.871 ; gain = 0.000
-
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.752 . Memory (MB): peak = 1820.871 ; gain = 0.000
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 213eb3378
-
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.752 . Memory (MB): peak = 1820.871 ; gain = 0.000
-Ending Placer Task | Checksum: 13d583d8b
-
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.753 . Memory (MB): peak = 1820.871 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.646 . Memory (MB): peak = 1833.652 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
-41 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
-place_design completed successfully
-INFO: [runtcl-4] Executing : report_io -file ALU_io_placed.rpt
-report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.085 . Memory (MB): peak = 1820.871 ; gain = 0.000
-INFO: [runtcl-4] Executing : report_utilization -file ALU_utilization_placed.rpt -pb ALU_utilization_placed.pb
-INFO: [runtcl-4] Executing : report_control_sets -verbose -file ALU_control_sets_placed.rpt
-report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1820.871 ; gain = 0.000
-INFO: [Timing 38-480] Writing timing data to binary archive.
-Writing XDEF routing.
-Writing XDEF routing logical nets.
-Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.080 . Memory (MB): peak = 1820.871 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.runs/impl_1/ALU_placed.dcp' has been generated.
-Command: phys_opt_design
-Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
-INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
-
-Starting Initial Update Timing Task
-
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1820.871 ; gain = 0.000
-INFO: [Vivado_Tcl 4-235] No timing constraint found. The netlist was not modified.
-INFO: [Common 17-83] Releasing license: Implementation
-49 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
-phys_opt_design completed successfully
-INFO: [Timing 38-480] Writing timing data to binary archive.
-Writing XDEF routing.
-Writing XDEF routing logical nets.
-Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.073 . Memory (MB): peak = 1831.262 ; gain = 10.391
-INFO: [Common 17-1381] The checkpoint 'E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.runs/impl_1/ALU_physopt.dcp' has been generated.
-Command: route_design
-Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
-INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
-Running DRC as a precondition to command route_design
-INFO: [DRC 23-27] Running DRC with 2 threads
-INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
-INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
-
-
-Starting Routing Task
-INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
-
-Phase 1 Build RT Design
-Checksum: PlaceDB: ec4667d8 ConstDB: 0 ShapeSum: 5111d5b3 RouteDB: 0
-Post Restoration Checksum: NetGraph: 6e3516ec | NumContArr: 8aedcb0b | Constraints: 190a55ad | Timing: 0
-Phase 1 Build RT Design | Checksum: 1122d37a4
-
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1873.539 ; gain = 33.148
-
-Phase 2 Router Initialization
-INFO: [Route 35-64] No timing constraints were detected. The router will operate in resource-optimization mode.
-
-Phase 2.1 Fix Topology Constraints
-Phase 2.1 Fix Topology Constraints | Checksum: 1122d37a4
-
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1879.621 ; gain = 39.230
-
-Phase 2.2 Pre Route Cleanup
-Phase 2.2 Pre Route Cleanup | Checksum: 1122d37a4
-
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1879.621 ; gain = 39.230
- Number of Nodes with overlaps = 0
-
-Router Utilization Summary
-  Global Vertical Routing Utilization    = 0 %
-  Global Horizontal Routing Utilization  = 0 %
-  Routable Net Status*
-  *Does not include unroutable nets such as driverless and loadless.
-  Run report_route_status for detailed report.
-  Number of Failed Nets               = 7
-    (Failed Nets is the sum of unrouted and partially routed nets)
-  Number of Unrouted Nets             = 7
-  Number of Partially Routed Nets     = 0
-  Number of Node Overlaps             = 0
-
-Phase 2 Router Initialization | Checksum: 16d27b250
-
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1881.285 ; gain = 40.895
-
-Phase 3 Initial Routing
-
-Phase 3.1 Global Routing
-Phase 3.1 Global Routing | Checksum: 16d27b250
-
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1881.285 ; gain = 40.895
- Number of Nodes with overlaps = 0
-Phase 3 Initial Routing | Checksum: 127728a18
-
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1881.285 ; gain = 40.895
-
-Phase 4 Rip-up And Reroute
-
-Phase 4.1 Global Iteration 0
-Phase 4.1 Global Iteration 0 | Checksum: 127728a18
-
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1881.285 ; gain = 40.895
-Phase 4 Rip-up And Reroute | Checksum: 127728a18
-
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1881.285 ; gain = 40.895
-
-Phase 5 Delay and Skew Optimization
-Phase 5 Delay and Skew Optimization | Checksum: 127728a18
-
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1881.285 ; gain = 40.895
-
-Phase 6 Post Hold Fix
-
-Phase 6.1 Hold Fix Iter
-Phase 6.1 Hold Fix Iter | Checksum: 127728a18
-
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1881.285 ; gain = 40.895
-Phase 6 Post Hold Fix | Checksum: 127728a18
-
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1881.285 ; gain = 40.895
-
-Phase 7 Route finalize
-
-Router Utilization Summary
-  Global Vertical Routing Utilization    = 0.0278716 %
-  Global Horizontal Routing Utilization  = 0.00367647 %
-  Routable Net Status*
-  *Does not include unroutable nets such as driverless and loadless.
-  Run report_route_status for detailed report.
-  Number of Failed Nets               = 0
-    (Failed Nets is the sum of unrouted and partially routed nets)
-  Number of Unrouted Nets             = 0
-  Number of Partially Routed Nets     = 0
-  Number of Node Overlaps             = 0
-
-
---GLOBAL Congestion:
-Utilization threshold used for congestion level computation: 0.85
-Congestion Report
-North Dir 1x1 Area, Max Cong = 16.2162%, No Congested Regions.
-South Dir 1x1 Area, Max Cong = 16.2162%, No Congested Regions.
-East Dir 1x1 Area, Max Cong = 10.2941%, No Congested Regions.
-West Dir 1x1 Area, Max Cong = 2.94118%, No Congested Regions.
-
-------------------------------
-Reporting congestion hotspots
-------------------------------
-Direction: North
-----------------
-Congested clusters found at Level 0
-Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
-Direction: South
-----------------
-Congested clusters found at Level 0
-Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
-Direction: East
-----------------
-Congested clusters found at Level 0
-Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
-Direction: West
-----------------
-Congested clusters found at Level 0
-Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
-
-Phase 7 Route finalize | Checksum: 127728a18
-
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1881.285 ; gain = 40.895
-
-Phase 8 Verifying routed nets
-
- Verification completed successfully
-Phase 8 Verifying routed nets | Checksum: 127728a18
-
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1882.289 ; gain = 41.898
-
-Phase 9 Depositing Routes
-Phase 9 Depositing Routes | Checksum: 193f3ae73
-
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1882.289 ; gain = 41.898
-INFO: [Route 35-16] Router Completed Successfully
-
-Phase 10 Post-Route Event Processing
-Phase 10 Post-Route Event Processing | Checksum: e404acaa
-
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1882.289 ; gain = 41.898
-
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1882.289 ; gain = 41.898
-
-Routing Is Done.
-INFO: [Common 17-83] Releasing license: Implementation
-59 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
-route_design completed successfully
-route_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1882.289 ; gain = 51.027
-INFO: [runtcl-4] Executing : report_drc -file ALU_drc_routed.rpt -pb ALU_drc_routed.pb -rpx ALU_drc_routed.rpx
-Command: report_drc -file ALU_drc_routed.rpt -pb ALU_drc_routed.pb -rpx ALU_drc_routed.rpx
-INFO: [IP_Flow 19-1839] IP Catalog is up to date.
-INFO: [DRC 23-27] Running DRC with 2 threads
-INFO: [Vivado_Tcl 2-168] The results of DRC are in file E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.runs/impl_1/ALU_drc_routed.rpt.
-report_drc completed successfully
-INFO: [runtcl-4] Executing : report_methodology -file ALU_methodology_drc_routed.rpt -pb ALU_methodology_drc_routed.pb -rpx ALU_methodology_drc_routed.rpx
-Command: report_methodology -file ALU_methodology_drc_routed.rpt -pb ALU_methodology_drc_routed.pb -rpx ALU_methodology_drc_routed.rpx
-INFO: [Timing 38-35] Done setting XDC timing constraints.
-INFO: [DRC 23-133] Running Methodology with 2 threads
-INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.runs/impl_1/ALU_methodology_drc_routed.rpt.
-report_methodology completed successfully
-INFO: [runtcl-4] Executing : report_power -file ALU_power_routed.rpt -pb ALU_power_summary_routed.pb -rpx ALU_power_routed.rpx
-Command: report_power -file ALU_power_routed.rpt -pb ALU_power_summary_routed.pb -rpx ALU_power_routed.rpx
-INFO: [Timing 38-35] Done setting XDC timing constraints.
-WARNING: [Power 33-232] No user defined clocks were found in the design! Power estimation will be inaccurate until this is corrected.
-Resolution: Please specify clocks using create_clock/create_generated_clock for sequential elements. For pure combinatorial circuits, please specify a virtual clock, otherwise the vectorless estimation might be inaccurate
-Running Vector-less Activity Propagation...
-
-Finished Running Vector-less Activity Propagation
-69 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
-report_power completed successfully
-INFO: [runtcl-4] Executing : report_route_status -file ALU_route_status.rpt -pb ALU_route_status.pb
-INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -report_unconstrained -file ALU_timing_summary_routed.rpt -pb ALU_timing_summary_routed.pb -rpx ALU_timing_summary_routed.rpx -warn_on_violation 
-INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
-INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
-WARNING: [Timing 38-313] There are no user specified timing constraints. Timing constraints are needed for proper timing analysis.
-INFO: [runtcl-4] Executing : report_incremental_reuse -file ALU_incremental_reuse_routed.rpt
-INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
-INFO: [runtcl-4] Executing : report_clock_utilization -file ALU_clock_utilization_routed.rpt
-INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file ALU_bus_skew_routed.rpt -pb ALU_bus_skew_routed.pb -rpx ALU_bus_skew_routed.rpx
-INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
-INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
-INFO: [Timing 38-480] Writing timing data to binary archive.
-Writing XDEF routing.
-Writing XDEF routing logical nets.
-Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.075 . Memory (MB): peak = 1913.094 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'E:/ENTC/5th_sem/DigitalSystemDesign/ALU/ALU.runs/impl_1/ALU_routed.dcp' has been generated.
-Command: write_bitstream -force ALU.bit
-Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
-INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
-Running DRC as a precondition to command write_bitstream
-INFO: [IP_Flow 19-1839] IP Catalog is up to date.
-INFO: [DRC 23-27] Running DRC with 2 threads
-WARNING: [DRC ZPS7-1] PS7 block required: The PS7 cell must be used in this Zynq design in order to enable correct default configuration.
-INFO: [Vivado 12-3199] DRC finished with 0 Errors, 1 Warnings
-INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
-INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
-Loading data files...
-Loading site data...
-Loading route data...
-Processing options...
-Creating bitmap...
-Creating bitstream...
-Writing bitstream ./ALU.bit...
-INFO: [Vivado 12-1842] Bitgen Completed Successfully.
-INFO: [Project 1-1876] WebTalk data collection is mandatory when using a ULT device. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
-INFO: [Common 17-83] Releasing license: Implementation
-14 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
-write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2382.152 ; gain = 469.059
-INFO: [Common 17-206] Exiting Vivado at Mon Dec 23 20:03:29 2024...
+51 Infos, 5 Warnings, 5 Critical Warnings and 6 Errors encountered.
+place_design failed
+ERROR: [Common 17-69] Command failed: Placer could not place all instances
+INFO: [Common 17-206] Exiting Vivado at Sat Jan  4 15:18:51 2025...
